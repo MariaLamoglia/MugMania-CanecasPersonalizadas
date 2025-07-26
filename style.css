@@ -78,8 +78,7 @@ nav a i{
     font-size: 20px;
 }
 
-.nav-link:hover,
-.nav-link:active{
+.nav-link:hover{
     color: var(--color-tertiary);
 }
 
@@ -100,7 +99,7 @@ nav a i{
     border: 3px solid var(--color-secondary);
     border-radius: 8px;
     box-shadow: 2px 2px 10px 2px #0000004d;
-    transition: 0.3s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 .card:hover{
@@ -113,11 +112,10 @@ nav a i{
     background-color: var(--color-tertiary);
     color: var(--color-headline);
     box-shadow: 1px 1px 4px 1px #000000c5;
-    transition: 0.3s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
-.card a:hover,
-.card a:active{
+.card a:hover{
     background-color: var(--color-headline);
     color: var(--color-tertiary);
     transform: scale(1.1);
@@ -217,11 +215,10 @@ nav a i{
     color: var(--color-button-text);
     box-shadow: 2px 2px 0 2px #000000c5;
     border-radius: 0.8em;
-    transition: 0.3s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
-#pedido a:hover,
-#pedido a:active{
+#pedido a:hover{
     background-color: var(--color-button-text);
     color: var(--color-button);
     box-shadow: -2px -2px 0 2px #000000c5,
@@ -265,8 +262,7 @@ nav a i{
     transition: 0.2s ease-in-out;
 }
 
-#btnOk:hover,
-#btnOk:active{
+#btnOk:hover{
     background-color: var(--color-button-text);
     color: var(--color-button);
     box-shadow: -2px -2px 0 2px #000000c5,
@@ -360,8 +356,7 @@ h5.garantia i{
     transition: 0.2s ease-in-out;
 }
 
-.btnContinuar:hover,
-.btnContinuar:active{
+.btnContinuar:hover{
     background-color: var(--color-button-text);
     color: var(--color-button);
     box-shadow: -2px -2px 0 2px #000000c5,
@@ -385,8 +380,7 @@ footer .canais{
     transition: 0.2s ease-in-out;
 }
 
-footer .canais:hover,
-footer .canais:active{
+footer .canais:hover{
     color: var(--color-tertiary);
     cursor: pointer;
 }
@@ -401,8 +395,7 @@ footer a{
     transition: 0.2s ease-in-out;
 }
 
-footer a:hover,
-footer a:active{
+footer a:hover{
     color: var(--color-tertiary);
 }
 
