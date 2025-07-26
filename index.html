@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <link rel="shortcut icon" href="./icons/icon-caneca-red.png" type="image/png">
+    <title>MugMania - Canecas Personalizadas</title>
+</head>
+<body>
+    <!-- NAVEGAÇÃO -->
+    <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#home">
+                <img src="./icons/icon-caneca-red.png" alt="">
+                MugMania - Canecas Personalizadas
+                <img src="./icons/icon-caneca-red.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Canecas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#canecasPersonalizadas">Canecas Personalizadas</a></li>
+                            <li><a class="dropdown-item" href="#canecasEspeciais">Canecas Especiais</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+                    <a href="carrinho.html" class="nav-link position-relative">
+                        <i class="bi bi-cart-plus"></i>
+                         
+                        <span id="cart-count" class="badge text-bg-danger position-absolute top-2 start-75 translate-middle rounded-circle p-1 border border-light">0</span>
+                    </a>
+                    <a class="nav-link" href="#footer">Contato</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PRODUTOS -->
+    <main class="main-content">
+        <div id="welcome" class="container my-5 py-2">
+            <h1 id="home" class="text-center" style="font-family: var(--font-sec);"> Seja Bem-Vindo(a) à MugMania</h1>
+            <p class="text-center">Mais que uma caneca, um presente perfeito.</p>
+        </div>
+        <section>
+            <h4 id="canecasPersonalizadas" class="py-4 text-center">As melhores canecas personalizadas são daqui</h4>
+
+            <div class="container text-center">
+                <!-- PRIMEIRA FILEIRA -->
+                <div class="row g-3 mb-3">       
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-bom-dia.png" class="card-img-top" alt="caneca-bom-dia">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca Dose de Ânimo</h5>
+                                <p class="card-text small descricao">Seu ritual matinal para um dia cheio de energia e positividade. A "Dose de Ânimo" que faltava!</p>
+                                <p class="card-text small preco">Por apenas R$39,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <i class="bi bi-star"></i>
+                                    3.8
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-cafe-com-amor.png" class="card-img-top" alt="caneca-cafe-com-amor">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca Café com Amor</h5>
+                                <p class="card-text small descricao">Mais que uma caneca, um abraço quente em suas mãos. Sua doce companhia diária.</p>
+                                <p class="card-text small preco">Por apenas R$39,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    4.2
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-vida-melhor-com-amigos.png" class="card-img-top" alt="caneca-vida-melhor-com-amigos">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca Essência Amiga</h5>
+                                <p class="card-text small descricao">Café, chá, chocolate... tudo fica mais gostoso na companhia de bons amigos.</p>
+                                <p class="card-text small preco">Por apenas R$49,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    4.7
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-flor-nome.png" class="card-img-top" alt="caneca-flor-nome">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca Canto Florido</h5>
+                                <p class="card-text small descricao">Um toque de natureza e exclusividade para seus momentos. [Nome Personalizável]</p>
+                                <p class="card-text small preco">Por apenas R$49,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    4.6
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SEGUNDA FILEIRA -->
+                <div class="row g-3 mb-3">
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-best-mom-ever.png" class="card-img-top" alt="caneca-best-mom-ever">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca Flor de Mãe</h5>
+                                <p class="card-text small descricao">Para a mãe que floresce o nosso dia. Uma homenagem delicada e cheia de amor em cada detalhe.</p>
+                                <p class="card-text small preco">Por apenas R$49,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    4.8
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-guaxinim.png" class="card-img-top" alt="caneca-guaxinim">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca Guaxinim Zen</h5>
+                                <p class="card-text small descricao">Desacelere e recarregue as energias com a filosofia 'Guaxinim Zen'. Sua pausa merece esta caneca!</p>
+                                <p class="card-text small preco">Por apenas R$39,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <i class="bi bi-star"></i>
+                                    3.7
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-wake-up.png" class="card-img-top" alt="caneca-wake-up">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca Aroma do Despertar</h5>
+                                <p class="card-text small descricao">Transforme suas manhâs com sua dose diária de inspiração vintage.</p>
+                                <p class="card-text small preco">Por apenas R$49,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                    4.0
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-com-nome.png" class="card-img-top" alt="caneca-com-nome">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca Essência Rústica</h5>
+                                <p class="card-text small descricao">Sua caneca com o charme do rústico e a exclusividade do seu nome. [Nome Personalizável]</p>
+                                <p class="card-text small preco">Por apenas R$49,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    4.1
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- TERCEIRA FILEIRA -->
+                <div class="row g-3">
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-zodiaco.png" class="card-img-top" alt="caneca-zodiaco">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca Conexão Cósmica</h5>
+                                <p class="card-text small descricao">Sua energia, seu signo, sua conexão com o universo. <br>[Nome Personalizável]</p>
+                                <p class="card-text small preco">Por apenas R$59,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    4.9
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-paisagem.png" class="card-img-top" alt="caneca-paisagem">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca Espírito Viajante</h5>
+                                <p class="card-text small descricao">Para quem tem o mundo nos olhos e a alma livre. Sua caneca para todas as aventuras.</p>
+                                <p class="card-text small preco">Por apenas R$39,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                    4.0
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-blood-type.png" class="card-img-top" alt="caneca-blood-type">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca Sangue de Café</h5>
+                                <p class="card-text small descricao">Seu tipo sanguíneo? Café! Para quem vive a paixão pela cafeína em cada gota.</p>
+                                <p class="card-text small preco">Por apenas R$39,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <i class="bi bi-star"></i>
+                                    3.9
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-debugging.png" class="card-img-top" alt="caneca-debugging">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca Elixir do Código</h5>
+                                <p class="card-text small descricao">Seu segredo para o código perfeito! O "Elixir do Código" que descomplica qualquer linha.</p>
+                                <p class="card-text small preco">Por apenas R$39,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    4.3
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ESPECIAIS -->
+                <h4 id="canecasEspeciais" class="py-5">Canecas Especiais MugMania</h4>
+                <!-- QUARTA FILEIRA -->
+                <div class="row g-3 mb-3">
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-mugmania.png" class="card-img-top" alt="caneca-mugmania">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca Clássica MugMania</h5>
+                                <p class="card-text small descricao">Mostre seu amor pela MugMania. A caneca clássica que não pode faltar na sua coleção.</p>
+                                <p class="card-text small preco">Por apenas R$39,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    4.7
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-mugmania-m-xicara.png" class="card-img-top" alt="caneca-mugmania-m-xicara">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca Clássica MugMania 2</h5>
+                                <p class="card-text small descricao">Estilo descomplicado. Sua "Clássica MugMania" para um café, chá ou chocolate com puro charme.</p>
+                                <p class="card-text small preco">Por apenas R$49,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    4.1
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-mugmania-light.png" class="card-img-top" alt="caneca-mugmania-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca MugMania Clean</h5>
+                                <p class="card-text small descricao">A alma da MugMania em sua forma mais leve. Perfeita para cada momento do seu dia, com o estilo da sua marca favorita.</p>
+                                <p class="card-text small preco">Por apenas R$49,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    4.4
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-mugmania-gato.png" class="card-img-top" alt="caneca-mugmania-gato">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca MugMania Fofura Felina</h5>
+                                <p class="card-text small descricao">A fofura felina que vai ronronar seu coração! Essencial para todo amante de gatos e de canecas MugMania.</p>
+                                <p class="card-text small preco">Por apenas R$49,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    4.6
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- QUINTA FILEIRA -->
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-mugmania-lightbrown.png" class="card-img-top" alt="caneca-mugmania-lightbrown">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca MugMania Aconchego</h5>
+                                <p class="card-text small descricao">O charme do aconchego em suas mãos. Uma caneca que te envolve e te faz sentir em casa.</p>
+                                <p class="card-text small preco">Por apenas R$39,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <i class="bi bi-star"></i>
+                                    3.5
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-mugmania-ceramica.png" class="card-img-top" alt="caneca-mugmania-ceramica">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca MugMania Artesanal</h5>
+                                <p class="card-text small descricao">Mais que uma caneca, uma obra de arte. O charme do artesanal que faltava em suas mãos.</p>
+                                <p class="card-text small preco">Por apenas R$49,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+                                    4.0
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-mugmania-escura.png" class="card-img-top" alt="caneca-mugmania-escura">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca MugMania Noturna</h5>
+                                <p class="card-text small descricao">Elegância que acompanha suas noites. Para quem aprecia os bons momentos ao luar.</p>
+                                <p class="card-text small preco">Por apenas R$49,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <i class="bi bi-star"></i>
+                                    3.7
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./images/caneca-branca-personalizavel.png" class="card-img-top" alt="caneca-branca-personalizavel">
+                            <div class="card-body">
+                                <h5 class="card-title">Caneca Personalizável</h5>
+                                <p class="card-text small descricao">Sua ideia, sua caneca! A "Caneca Personalizável" é a tela em branco para sua criatividade brilhar. Crie a sua agora!</p>
+                                <p class="card-text small preco">Por apenas R$59,90</p>
+                                <p class="card-text stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    4.3
+                                </p>
+                                <a href="#" class="btn add-to-cart-btn">Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>     
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="container text-center mt-5 py-5">
+            <h4>Fale conosco pelos nossos canais de comunicação:
+                <a href="#" class="canais"><i class="bi bi-whatsapp"></i></a>
+                <a href="#" class="canais"><i class="bi bi-instagram"></i></a>
+            </h4>
+            <p class="contato">Ou entre contato com <a href="#">mugmania.suporte@gmail.com</a></p>
+            <h6 class="mt-4">&copy 2025 MugMania - Canecas Personalizadas. Todos os direitos reservados.</h6>
+            <p class="mt-4 termos">
+                <a href="#">Termos de uso</a>
+                <a href="#">Política de privacidade</a>
+            </p>
+        </div>
+    </footer>
+    
+    <script src="javascript.js" defer></script>
+</body>
+</html>

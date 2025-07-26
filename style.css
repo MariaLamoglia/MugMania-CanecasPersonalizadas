@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+
+:root{
+    --color-background: #f9f4ef;
+    --color-headline: #020826;
+    --color-paragraph: #716040;
+    --color-button: #8c7851;
+    --color-button-text: #fffffe;
+    --color-secondary: #eaddcf;
+    --color-tertiary: #f25042;
+
+    --font-prin: "Funnel Display", sans-serif;
+    --font-sec: "Sour Gummy", sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body{
+    background-color: var(--color-background);
+    color: var(--color-paragraph);
+    font-family: var(--font-prin);
+    padding-top: 50px;
+}
+
+main{
+    margin-top: 0;
+}
+
+#home{
+    padding-top: 20px;
+}
+
+#welcome{
+    background-color: var(--color-secondary);
+    color: var(--color-paragraph);
+    border-radius: 10em 5em;
+    box-shadow: 2px 2px 10px 2px #0000003a;
+}
+
+/* BARRA DE ROLAGEM */
+::-webkit-scrollbar{
+    width: 14px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--color-button-text);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--color-headline);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: var(--color-tertiary);
+}
+
+
+/* NAV */
+.navbar{
+    background-color: var(--color-secondary);
+}
+
+nav a{
+    font-family: var(--font-sec);
+}
+
+nav a i{
+    font-size: 20px;
+}
+
+.nav-link:hover{
+    color: var(--color-tertiary);
+}
+
+.dropdown-menu{
+    background-color: var(--color-secondary);
+    border: none;
+}
+
+.dropdown-menu .dropdown-item:hover{
+    background-color: #f251421a;
+    color: var(--color-tertiary);
+}
+
+/* CARDS */
+.card{
+    background-color: var(--color-button-text);
+    color: var(--color-button);
+    border: 3px solid var(--color-secondary);
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px 2px #0000004d;
+    transition: 0.3s ease-in-out;
+}
+
+.card:hover{
+    box-shadow: -2px -2px 10px 2px #0000007c;
+    translate: 3px 3px;
+}
+
+.card a{
+    font-weight: bold;
+    background-color: var(--color-tertiary);
+    color: var(--color-headline);
+    box-shadow: 1px 1px 4px 1px #000000c5;
+    transition: 0.3s ease-in-out;
+}
+
+.card a:hover{
+    background-color: var(--color-headline);
+    color: var(--color-tertiary);
+    transform: scale(1.1);
+}
+
+.card i{
+    color: gold;
+}
+
+/* CARRINHO */
+.remove-from-cart-btn{
+    font-weight: bold;
+    background-color: var(--color-tertiary);
+    color: var(--color-headline);
+    transition: 0.3s ease-in-out;
+}
+
+.remove-from-cart-btn i{
+    font-size: 18px;
+    color: var(--color-headline);
+}
+
+.remove-from-cart-btn:hover{
+    background-color: var(--color-headline);
+    color: var(--color-tertiary);
+    transform: scale(1.1);
+}
+
+.remove-from-cart-btn:hover i{
+    color: var(--color-tertiary);
+}
+
+@keyframes wave-text{
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.wavy-text-container span{
+    position: relative; /* NECESSÁRIO PARA ANIMAÇÃO */
+    display: inline-block; /* PERMITE QUE 'transform' FUNCIONE */
+    font-family: var(--font-prin);
+    color: var(--color-paragraph);
+}
+
+.wavy-text-container:hover span{
+    animation-name: wave-text;
+    animation-duration: 1s;
+    animation-iteration-count: 2;
+    animation-timing-function: ease-in-out;
+}
+
+.wavy-text-container span:nth-child(1) {animation-delay: 0.1s;}
+.wavy-text-container span:nth-child(2) {animation-delay: 0.2s;}
+.wavy-text-container span:nth-child(3) {animation-delay: 0.3s;}
+.wavy-text-container span:nth-child(4) {animation-delay: 0.4s;}
+.wavy-text-container span:nth-child(5) {animation-delay: 0.5s;}
+.wavy-text-container span:nth-child(6) {animation-delay: 0.6s;}
+.wavy-text-container span:nth-child(7) {animation-delay: 0.7s;}
+.wavy-text-container span:nth-child(8) {animation-delay: 0.8s;}
+
+@keyframes cart-driving {
+  0% {
+    transform: translateX(5) rotate(-1deg);
+  }
+  50% {
+    transform: translateX(50px) rotate(2deg);
+  }
+  100% {
+    transform: translateX(5) rotate(-1deg);
+  }
+}
+
+.bi-cart-check {
+  display: inline-block;
+  
+  animation: cart-driving 2.5s ease-in-out infinite;
+}
+
+#pedido{
+    border-bottom: 2px dashed var(--color-button);
+}
+
+#cart-total{
+    font-size: 18px;
+}
+
+#pedido a{
+    appearance: none;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: var(--color-button);
+    color: var(--color-button-text);
+    box-shadow: 2px 2px 0 2px #000000c5;
+    border-radius: 0.8em;
+    transition: 0.3s ease-in-out;
+}
+
+#pedido a:hover{
+    background-color: var(--color-button-text);
+    color: var(--color-button);
+    box-shadow: -2px -2px 0 2px #000000c5,
+        inset 2px 2px 6px #0008;
+        translate: 3px 3px;
+}
+
+/* FORMULÁRIO DE PAGAMENTO */
+#payment-form-container{
+    display: none;
+}
+
+.boxPag{
+    border: 3px solid var(--color-button);
+    margin: 15px 45px;
+}
+
+#formulario > h2{
+    text-decoration: underline dashed 2px;
+}
+
+.metodoPag{
+    font-size: 18px;
+}
+
+.info-toast-btn{
+    border: none;
+}
+
+.toast-body, .toast-body button{
+    font-weight: bold;
+}
+
+#btnOk{
+    background-color: var(--color-button);
+    color: var(--color-button-text);
+    width: 100%;    
+    box-shadow: 2px 2px 0 2px #000000c5;
+    border-radius: 2em;
+    transition: 0.2s ease-in-out;
+}
+
+#btnOk:hover{
+    background-color: var(--color-button-text);
+    color: var(--color-button);
+    box-shadow: -2px -2px 0 2px #000000c5,
+        inset 2px 2px 6px #0008;
+        translate: 3px 3px;
+}
+
+.cartoes img{
+    width: 20px;
+    margin-left: 0.3em;
+}
+
+.pedidoTotal{
+    width: 50%;
+}
+
+.table{
+    border: 3px solid var(--color-button);
+    border-radius: 4px;
+}
+
+.container-garantia{
+    border: 3px solid var(--color-button);
+    border-radius: 4px;
+    background-color: var(--color-button-text);
+}
+
+h5.garantia i{
+    color: var(--color-headline);
+    margin-left: 10px;
+} 
+
+.garantia i{
+    color: green;
+    margin-bottom: 4px;
+}
+
+.garantia > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* OFFCANVAS */
+#staticBackdrop{
+    background-color: var(--color-background);
+    color: var(--color-paragraph);
+}
+
+.offcanvas-body h5{
+    color: green;
+}
+
+.lista{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.item2{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.item2::before{
+    content: '\F633'; /* <i class="bi bi-check-lg"></i> */
+    font-family: 'bootstrap-icons';
+    font-weight: bold;
+    color: green;
+    margin-right: 10px;
+    font-size: 1em;
+}
+
+#termosCondicoes{
+    text-decoration: underline;
+    color: var(--color-paragraph);
+    transition: 0.2s ease-in-out;   
+}
+
+#termosCondicoes:hover{
+    color: var(--color-tertiary);
+}
+
+.btnContinuar{
+    background-color: var(--color-button);
+    color: var(--color-button-text);
+    font-weight: bold;
+    box-shadow: 2px 2px 0 2px #000000c5;
+    border-radius: 1em;
+    transition: 0.2s ease-in-out;
+}
+
+.btnContinuar:hover{
+    background-color: var(--color-button-text);
+    color: var(--color-button);
+    box-shadow: -2px -2px 0 2px #000000c5,
+        inset 2px 2px 6px #0008;
+        translate: 3px 3px;
+}
+
+/* FOOTER */
+footer{
+    background-color: var(--color-secondary);
+    color: var(--color-headline);
+    width: 100%;
+}
+
+footer .canais{
+    background-color: #f9f4ef84;
+    padding: 8px;
+    margin: 0px 5px;
+    font-size: 25px;
+    border-radius: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+footer .canais:hover{
+    color: var(--color-tertiary);
+    cursor: pointer;
+}
+
+footer .contato{
+    font-size: 18px;
+}
+
+footer a{
+    text-decoration: underline;
+    color: var(--color-headline);
+    transition: 0.2s ease-in-out;
+}
+
+footer a:hover{
+    color: var(--color-tertiary);
+}
+
+footer .termos a{
+    margin: 0px 8px;
+    text-decoration: none;
+}
+
+footer .termos a:hover{
+    text-decoration: underline;
+}

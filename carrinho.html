@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <link rel="shortcut icon" href="./icons/icon-caneca-red.png" type="image/png">
+    <title>MugMania - Canecas Personalizadas</title>
+    <style>
+        html, body{
+            height: 100%;
+        }
+
+        .page-wrapper{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main.main-content{
+            flex-grow: 1; /* FAZ O MAIN CRESCER E EMPURRAR O FOOTER */
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVEGAÇÃO -->
+    <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="./icons/icon-caneca-red.png" alt="">
+                MugMania - Canecas Personalizadas
+                <img src="./icons/icon-caneca-red.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" aria-current="page" href="index.html#home">Home</a>
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Canecas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html#canecasPersonalizadas">Canecas Personalizadas</a></li>
+                            <li><a class="dropdown-item" href="index.html#canecasEspeciais">Canecas Especiais</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+                    <a href="carrinho.html" class="nav-link position-relative active">
+                        <i class="bi bi-cart-plus"></i>
+                         
+                        <span id="cart-count" class="badge text-bg-danger position-absolute top-2 start-75 translate-middle rounded-circle p-1 border border-light">0</span>
+                    </a>
+                    <a class="nav-link" href="#footer">Contato</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-wrapper">
+        <!-- PRODUTOS -->
+        <main class="main-content">
+            <div class="container my-5">
+                <h1 class="wavy-text-container">
+                    <span>C</span><span>a</span><span>r</span><span>r</span><span>i</span><span>n</span><span>h</span><span>o</span>
+                    <i class="bi bi-cart-check" style="color: var(--color-tertiary);"></i>
+                </h1>
+                <div id="pedido" class="container-fluid d-flex align-items-center py-3">
+                    <p id="cart-total" class="mb-0"></p>
+                    <a href="#formulario" id="confirm-order-btn" class="btn ms-auto" style="display: none;">Confirmar pedido</a>
+                </div>
+            </div>
+            <div id="cartItemsContainer" class="container text-center">
+                <div class="row g-3 mb-3" id="cart-items">
+        
+                </div>
+            </div>
+
+            <!-- FORMULÁRIO -->
+            <div id="payment-form-container" class="boxPag mt-5">
+                <div id="formulario" class="text-center pt-4">
+                    <h2>Formulário de pagamento</h2>
+                </div>
+                <div class="form mx-5 py-3">
+                    <!-- DADOS PESSOAIS -->
+                    <h3 class="pb-2">Dados Pessoais</h3>
+                    <form class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-6">
+                            <label for="validationCustom01" class="form-label">Primeiro Nome</label>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="Nome" required>
+                            <div class="invalid-feedback">
+                                Por favor coloque seu Nome.
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom02" class="form-label">Sobrenome</label>
+                            <input type="text" class="form-control" id="validationCustom02" placeholder="Sobrenome" required>
+                            <div class="invalid-feedback">
+                                Por favor coloque seu Sobrenome.
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustomUsername" class="form-label">E-mail</label>
+                            <div class="input-group has-validation">
+                                <input type="email" class="form-control" id="validationCustomEmail" aria-describedby="inputGroupPrepend" placeholder="exemplo@gmail.com" required>
+                                <div class="invalid-feedback">
+                                    Por favor coloque seu e-mail.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustomTel" class="form-label">Número de celular</label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text" id="inputGroupPrepend">55+</span>
+                                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" placeholder="(00) 00000-0000" required>
+                                <div class="invalid-feedback">
+                                    Por favor coloque seu número.
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <!-- ENDEREÇO -->
+                        <h3>Endereço</h3>
+                        <div class="col-7">
+                            <label for="logradouro" class="form-label">Logradouro</label>
+                            <input type="text" class="form-control" id="validationCustomLogradouro" aria-describedby="inputGroupPrepend" placeholder="Ex: Rua João Vicente" required>
+                            <div class="invalid-feedback">
+                                Por favor coloque seu logradouro.
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <label for="bairro" class="form-label">Bairro</label>
+                            <input type="text" class="form-control" id="validationCustomBairro" aria-describedby="inputGroupPrepend" placeholder="Ex: Oswaldo Cruz" required>
+                            <div class="invalid-feedback">
+                                Por favor coloque seu bairro.
+                            </div>
+                        </div>
+                        <div class="col-5 col-md-4">
+                            <label for="complemento" class="form-label">Complemento</label>
+                            <input type="text" class="form-control" id="validationCustomComplemento" aria-describedby="inputGroupPrepend" placeholder="Ex: Ap. 301, Bloco B" required>
+                            <div class="invalid-feedback">
+                                Por favor coloque o complemento.
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-2">
+                            <label for="numero" class="form-label">N.º</label>
+                            <input type="text" class="form-control" id="validationCustomNumero" aria-describedby="inputGroupPrepend" placeholder="123" required>
+                            <div class="invalid-feedback">
+                                Por favor coloque o n.º.
+                            </div>
+                        </div>
+                        <div class="col-4 col-md-3">
+                            <label for="cep" class="form-label">CEP</label>
+                            <input type="text" class="form-control" id="validationCustomCep" aria-describedby="inputGroupPrepend" placeholder="00000-000" required>
+                            <div class="invalid-feedback">
+                                Por favor coloque o CEP.
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="cidade" class="form-label">Cidade</label>
+                            <input type="text" class="form-control" id="validationCustomCidade" aria-describedby="inputGroupPrepend" placeholder="Ex: Rio de Janeiro" required>
+                            <div class="invalid-feedback">
+                                Por favor coloque sua cidade.
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="estado" class="form-label">Estado</label>
+                            <select class="form-select" id="validationCustomEstado" aria-describedby="inputGroupPrepend" required>
+                                <option selected disabled>Selecione seu Estado</option>
+                                <option>Acre (AC)</option>
+                                <option>Alagoas (AL)</option>
+                                <option>Amapá (AP)</option>
+                                <option>Amazonas (AM)</option>
+                                <option>Bahia (BA)</option>
+                                <option>Ceará (CE)</option>
+                                <option>Distrito Federal (DF)</option>
+                                <option>Espírito Santo (ES)</option>
+                                <option>Goiás (GO)</option>
+                                <option>Maranhão (MA)</option>
+                                <option>Mato Grosso (MT)</option>
+                                <option>Mato Grosso do Sul (MS)</option>
+                                <option>Minas Gerais (MG)</option>
+                                <option>Pará (PA)</option>
+                                <option>Paraíba (PB)</option>
+                                <option>Paraná (PR)</option>
+                                <option>Pernambuco (PE)</option>
+                                <option>Piauí (PI)</option>
+                                <option>Rio de Janeiro (RJ)</option>
+                                <option>Rio Grande do Norte (RN)</option>
+                                <option>Rio Grande do Sul (RS)</option>
+                                <option>Rondônia (RO)</option>
+                                <option>Roraima (RR)</option>
+                                <option>Santa Catarina (SC)</option>
+                                <option>São Paulo (SP)</option>
+                                <option>Sergipe (SE)</option>
+                                <option>Tocantins (TO)</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Por favor selecione seu estado.
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- FORMA DE PAGAMENTO -->
+                        <h3>Método de pagamento</h3>
+
+                        <div id="validationCustomPagamento">
+                            <div class="col-12">
+                                <input class="form-check-input" type="radio" name="radioDefault" id="pix" required>
+                                <label class="form-check-label metodoPag" for="pix">
+                                    <img class="pe-2" src="./icons/pix-brands-solid-full.svg" alt="pix-icon" width="40">
+                                    Pix
+                                    <button type="button" class="btn info-toast-btn" data-bs-target="#pixToast">
+                                        <i class="bi bi-question-circle"></i>
+                                    </button>
+                                    <div class="toast-container position-fixed top-50 start-50 translate-middle p-3">
+                                        <div id="pixToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+                                            <div class="toast-body p-4">
+                                                Pagamento aprovado na hora. Você poderá finalizar o seu Pix por meio do QR Code ou código no banco que preferir! Mas fique atento, este código só será válido por 24 horas.
+                                                <br>
+                                                <button type="button" id="btnOk" class="btn mt-3" data-bs-dismiss="toast" aria-label="Close">OK</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <input class="form-check-input" type="radio" name="radioDefault" id="credito">
+                                <label class="form-check-label metodoPag ps-2" for="credito">
+                                    <i class="bi bi-credit-card pe-2" style="color: darkblue;"></i>
+                                    Cartão de crédito
+                                    <br>
+                                    <small class="cartoes">
+                                        <img src="./icons/icon-visa.png" alt="icon-visa">
+                                        <img src="./icons/icon-mastercard.png" alt="icon-mastercard">
+                                        <img src="./icons/icon-maestro.png" alt="icon-maestro">
+                                        <img src="./icons/icon-amex.png" alt="icon-amex">
+                                    </small>
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <input class="form-check-input" type="radio" name="radioDefault" id="debito">
+                                <label class="form-check-label metodoPag ps-2" for="debito">
+                                    <i class="bi bi-credit-card pe-2" style="color: darkred;"></i>
+                                    Cartão de débito
+                                    <br>
+                                    <small class="cartoes">
+                                        <img src="./icons/icon-visa.png" alt="icon-visa">
+                                        <img src="./icons/icon-mastercard.png" alt="icon-mastercard">
+                                        <img src="./icons/icon-maestro.png" alt="icon-maestro">
+                                        <img src="./icons/icon-amex.png" alt="icon-amex">
+                                    </small>
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <input class="form-check-input" type="radio" name="radioDefault" id="boleto">
+                                <label class="form-check-label" for="boleto">
+                                    <img class="me-1" width="55px" height="35px" src="https://img.icons8.com/hatch/64/boleto-bankario.png" alt="boleto-bankario" style="border: 1px solid black; border-radius: 5px;"/>
+                                    Boleto Bancário
+                                    <button type="button" class="btn info-toast-btn" data-bs-target="#boletoToast">
+                                        <i class="bi bi-question-circle"></i>
+                                    </button>
+                                    
+                                    <div class="toast-container position-fixed top-50 start-50 translate-middle p-3">
+                                        <div id="boletoToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+                                            <div class="toast-body p-4">
+                                                O prazo de validade do seu boleto é de até 3 dias úteis, você pode imprimir e pagar no banco ou utilizar o código que será enviado para o email cadastrado para pagar pela internet. Após o pagamento, o status do seu pedido será atualizado também em até 3 dias úteis (o tempo de atualização pode ser maior durante feriados). Além disso, você precisa ter 16 anos ou mais para que a sua compra seja autorizada. O boleto não permite reembolsos através do mesmo método de pagamento.
+                                                <br>
+                                                <button type="button" id="btnOk" class="btn mt-3" data-bs-dismiss="toast" aria-label="Close">OK</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="invalid-feedback">
+                                Por favor selecione o método de pagamento.
+                            </div>
+                        </div>
+                            <div class="col-12">
+                                <h5>Método de Envio</h5>
+                                <p>
+                                    <i class="bi bi-check-circle-fill text-success"></i>
+                                    Taxa Mínima de Envio <br>
+                                    <strong class="ps-4">R$10,00</strong>
+                                </p>
+                            </div>
+                            <hr>
+                
+                            <div class="pedidoTotal">
+                                <table class="table d-table-cell">
+                                        <tr>
+                                            <td>Valor Total:</td>
+                                            <td id="subtotal-value">R$ 00,00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Taxa de envio:</td>
+                                            <td>R$ 10,00</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Total do pedido:</th>
+                                            <th id="grand-total-value">R$ 00,00</th>
+                                        </tr>
+                                </table>
+                            </div>
+                            <hr>
+                            <div class="container-garantia p-3 col-12 col-lg-7">
+                                <h5 class=" mb-4 garantia">
+                                    Compre de forma segura e sustentável
+                                    <button class="btn p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                                       <i class="bi bi-arrow-right-circle"></i>
+                                    </button>
+                                    <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="staticBackdropLabel">Compre de forma segura e sustentável</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body small text-start">
+                                            <h5>
+                                                <i class="bi bi-truck text-success"></i>
+                                                Garantia de entrega segura
+                                            </h5>
+                                            <small>
+                                                A MugMania trabalha com parceiros de entrega confiáveis em todo o Brasil. Garantimos que seu pacote chegará até você com segurança e dentro do prazo. Se houver algum problema durante o transporte dos itens que você comprou, como danos, perda ou atraso, tenha certeza de que faremos o possível para resolver os problemas e fornecer soluções.
+                                            </small>
+                                            <hr>
+                                            <h5>
+                                                <i class="bi bi-shield-fill-check text-success"></i>
+                                                Garanta seu pagamento
+                                            </h5>
+                                            <small>
+                                                <ul class="lista">
+                                                    <li class="item2">O padrão de segurança de dados da indústria de cartões de pagamento (PCIDSS) é seguido</li>
+                                                    <li class="item2">Dados seguros e criptografados são garantidos</li>
+                                                    <li class="item2">MugMania apenas compartilha as informações do seu cartão com nossos provedores de serviços de pagamento que concordaram em proteger suas informações</li>
+                                                </ul>
+                                            </small>
+                                            <hr>
+                                            <h5>
+                                                <i class="bi bi-lock-fill text-success"></i>
+                                                Segurança e Privacidade
+                                            </h5>
+                                            <small>
+                                                <ul class="lista">
+                                                    <li class="item2">O padrão de segurança de dados da indústria de cartões de pagamento (PCIDSS) é seguido</li>
+                                                    <li class="item2">Dados seguros e criptografados são garantidos</li>
+                                                    <li class="item2">MugMania apenas compartilha as informações do seu cartão com nossos provedores de serviços de pagamento que concordaram em proteger suas informações</li>
+                                                </ul>
+                                            </small>
+                                            <hr>
+                                            <h5>
+                                                <i class="bi bi-chat-right-dots-fill text-success"></i>
+                                                Suporte ao cliente
+                                            </h5>
+                                            <small>
+                                                Se você tiver alguma dúvida sobre seu pedido, entre em contato conosco pelos nossos canais de comunicação.
+                                            </small>
+                                        </div>
+                                    </div>
+                                </h5>
+                                <div class="garantia d-flex flex-column flex-md-row text-center gap-4">
+                                    <div class="entrega">
+                                        <i class="bi bi-truck"></i>
+                                        <small>Garantia de entrega segura</small>
+                                    </div>
+                                    <div class="pag">
+                                        <i class="bi bi-shield-fill-check"></i>
+                                        <small>Garanta seu pagamento</small>
+                                    </div>
+                                    <div class="seguranca">
+                                        <i class="bi bi-lock-fill"></i>
+                                        <small>Segurança e Privacidade</small>
+                                    </div>
+                                    <div class="chat">
+                                        <i class="bi bi-chat-right-dots-fill"></i>
+                                        <small>Suporte ao cliente</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                            <div class="col-12 pt-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                    <label class="form-check-label" for="invalidCheck">
+                                        Eu concordo com os <a href="#" id="termosCondicoes">Termos e Condições</a> 
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        Você deve concordar antes de continuar.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 pb-3">
+                                <button class="btn col-6 col-md-3 btnContinuar" type="submit">
+                                    Continuar
+                                </button>
+                            </div>
+                    </form>
+                </div>       
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer id="footer">
+            <div class="container text-center mt-5 py-5">
+                <h4>Fale conosco pelos nossos canais de comunicação:
+                    <a href="#" class="canais"><i class="bi bi-whatsapp"></i></a>
+                    <a href="#" class="canais"><i class="bi bi-instagram"></i></a>
+                </h4>
+                <p class="contato">Ou entre contato com <a href="#">mugmania.suporte@gmail.com</a></p>
+                <h6 class="mt-4">&copy 2025 MugMania - Canecas Personalizadas. Todos os direitos reservados.</h6>
+                <p class="mt-4 termos">
+                    <a href="#">Termos de uso</a>
+                    <a href="#">Política de privacidade</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="javascript.js" defer></script>
+
+</body>
+</html>
