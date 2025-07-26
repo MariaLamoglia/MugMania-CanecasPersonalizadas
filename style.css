@@ -232,8 +232,9 @@ nav a i{
 }
 
 .boxPag{
-    border: 3px solid var(--color-button);
+    border: 5px solid var(--color-button);
     margin: 15px 45px;
+    box-shadow: 2px 2px 10px 2px #0000005c;
 }
 
 #formulario > h2{
