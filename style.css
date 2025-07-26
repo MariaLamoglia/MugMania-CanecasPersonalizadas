@@ -78,7 +78,8 @@ nav a i{
     font-size: 20px;
 }
 
-.nav-link:hover{
+.nav-link:hover,
+.nav-link:active{
     color: var(--color-tertiary);
 }
 
@@ -115,7 +116,8 @@ nav a i{
     transition: 0.3s ease-in-out;
 }
 
-.card a:hover{
+.card a:hover,
+.card a:active{
     background-color: var(--color-headline);
     color: var(--color-tertiary);
     transform: scale(1.1);
@@ -218,7 +220,8 @@ nav a i{
     transition: 0.3s ease-in-out;
 }
 
-#pedido a:hover{
+#pedido a:hover,
+#pedido a:active{
     background-color: var(--color-button-text);
     color: var(--color-button);
     box-shadow: -2px -2px 0 2px #000000c5,
@@ -262,7 +265,8 @@ nav a i{
     transition: 0.2s ease-in-out;
 }
 
-#btnOk:hover{
+#btnOk:hover,
+#btnOk:active{
     background-color: var(--color-button-text);
     color: var(--color-button);
     box-shadow: -2px -2px 0 2px #000000c5,
@@ -356,7 +360,8 @@ h5.garantia i{
     transition: 0.2s ease-in-out;
 }
 
-.btnContinuar:hover{
+.btnContinuar:hover,
+.btnContinuar:active{
     background-color: var(--color-button-text);
     color: var(--color-button);
     box-shadow: -2px -2px 0 2px #000000c5,
@@ -380,7 +385,8 @@ footer .canais{
     transition: 0.2s ease-in-out;
 }
 
-footer .canais:hover{
+footer .canais:hover,
+footer .canais:active{
     color: var(--color-tertiary);
     cursor: pointer;
 }
@@ -395,7 +401,8 @@ footer a{
     transition: 0.2s ease-in-out;
 }
 
-footer a:hover{
+footer a:hover,
+footer a:active{
     color: var(--color-tertiary);
 }
 
