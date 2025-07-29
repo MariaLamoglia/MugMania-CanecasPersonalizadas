@@ -66,11 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // CALCULA O TOTAL GERAL
         const grandTotal = subtotal + shippingFee;
 
-        // --- NOSSOS DETETIVES ---
-        console.log('Subtotal calculado (número):', subtotal);
-        console.log('Total geral calculado (número):', grandTotal);
-        // -------------------------
-
         // FORMATA OS VALORES COMO MOEDA BR (BRL)
         const formatter = new Intl.NumberFormat('pt-BR', {
             style: 'currency',
@@ -79,10 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const formattedSubtotal = formatter.format(subtotal);
         const formattedGrandTotal = formatter.format(grandTotal);
-
-        // --- DETETIVE FINAL ---
-        console.log('Total geral FORMATADO:', formattedGrandTotal);
-        // --------------------
 
         // ATUALIZA HTML COM OS VALORES FORMATADOS
         totalContainer.innerHTML = `<strong>Total:</strong> ${formattedGrandTotal}`; // TOTAL QUE JÁ EXISTIA
